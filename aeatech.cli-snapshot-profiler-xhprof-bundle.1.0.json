@@ -1,0 +1,65 @@
+{
+    "manifests": {
+        "aeatech/cli-snapshot-profiler-xhprof-bundle": {
+            "manifest": {
+                "bundles": {
+                    "AEATech\\CLISnapshotProfilerXhprofBundle\\AEATechCLISnapshotProfilerXhprofBundle": [
+                        "dev",
+                        "prod"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%/"
+                },
+                "env": {
+                    "AEA_TECH_CLI_SNAPSHOT_PROFILER_XHPROF_XHGUI": "https://login:password@host/run/import"
+                }
+            },
+            "files": {
+                "config/packages/aea_tech_cli_snapshot_profiler_xhprof.yaml": {
+                    "contents": [
+                        "aea_tech_cli_snapshot_profiler_xhprof:",
+                        "    # Enable/Disable profiling",
+                        "    is_profiling_enabled: false",
+                        "",
+                        "    # Application info for snapshot naming",
+                        "    app_version: '0.0.1'",
+                        "",
+                        "    # XHGUI configuration",
+                        "    xhgui:",
+                        "        import_uri: '%env(string:AEA_TECH_CLI_SNAPSHOT_PROFILER_XHPROF_XHGUI)%'",
+                        "        import_timeout: 1",
+                        "",
+                        "    ###",
+                        "    # xhprof configuration",
+                        "    # - collect internal functions info",
+                        "    # - collect memory allocation info",
+                        "    ###",
+                        "    xhprof:",
+                        "        collect_additional_info: '1'",
+                        "        flags:",
+                        "            - !php/const Xhgui\\Profiler\\ProfilingFlags::MEMORY",
+                        "",
+                        "    ###",
+                        "    # Event matched configuration - START",
+                        "    ###",
+                        "    event_matcher:",
+                        "        # Enable/Disable all commands profiling",
+                        "        is_profile_all_commands: false",
+                        "",
+                        "        # Enable profile by command name (\\AEATech\\CLISnapshotProfilerEventSubscriber\\EventMatcher\\CommandEventMatcher)",
+                        "        command:",
+                        "            is_enabled: false",
+                        "            name_list:",
+                        "                - 'app:command'",
+                        "    ###",
+                        "    # Event matched configuration - END",
+                        "    ###"
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "a9530858df60984ed0e470aabcb67b0ed629436b"
+        }
+    }
+}
