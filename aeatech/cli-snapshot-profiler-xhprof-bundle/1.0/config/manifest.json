@@ -1,0 +1,11 @@
+{
+    "bundles": {
+        "AEATech\\CLISnapshotProfilerXhprofBundle\\AEATechCLISnapshotProfilerXhprofBundle": ["dev", "prod"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "env": {
+        "AEA_TECH_CLI_SNAPSHOT_PROFILER_XHPROF_XHGUI": "https://login:password@host/run/import"
+    }
+}
