@@ -1,0 +1,12 @@
+{
+    "bundles": {
+        "AEATech\\WebSnapshotProfilerNewrelicBundle\\AEATechWebSnapshotProfilerNewrelicBundle": ["dev", "prod"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "env": {
+        "AEA_TECH_WEB_SNAPSHOT_PROFILER_NEWRELIC_APP_NAME": "newrelic_app_name",
+        "AEA_TECH_WEB_SNAPSHOT_PROFILER_NEWRELIC_LICENSE": "newrelic_license_key"
+    }
+}
