@@ -1,0 +1,24 @@
+aea_tech_cli_snapshot_profiler_newrelic:
+    # Enable/Disable profiling
+    is_profiling_enabled: false
+
+    # newrelic configuration
+    newrelic:
+        app_name: '%env(string:AEA_TECH_CLI_SNAPSHOT_PROFILER_NEWRELIC_APP_NAME)%'
+        license: '%env(string:AEA_TECH_CLI_SNAPSHOT_PROFILER_NEWRELIC_LICENSE)%'
+
+    ###
+    # Event matched configuration - START
+    ###
+    event_matcher:
+        # Enable/Disable all routes profiling
+        is_profile_all_commands: false
+
+        # Enable profile by command name (\AEATech\CLISnapshotProfilerEventSubscriber\EventMatcher\CommandEventMatcher)
+        command:
+            is_enabled: false
+            name_list:
+                - 'app:command'
+    ###
+    # Event matched configuration - END
+    ###
