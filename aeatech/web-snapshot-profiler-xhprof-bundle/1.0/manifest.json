@@ -1,0 +1,11 @@
+{
+    "bundles": {
+        "AEATech\\WebSnapshotProfilerXhprofBundle\\AEATechWebSnapshotProfilerXhprofBundle": ["dev", "prod"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    },
+    "env": {
+        "AEA_TECH_WEB_SNAPSHOT_PROFILER_XHPROF_XHGUI": "https://login:password@host/run/import"
+    }
+}
