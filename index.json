@@ -1,6 +1,9 @@
 {
     "aliases": [],
     "recipes": {
+        "aeatech/web-snapshot-profiler-newrelic-bundle": [
+            "1.0"
+        ],
         "aeatech/web-snapshot-profiler-xhprof-bundle": [
             "1.0"
         ]
